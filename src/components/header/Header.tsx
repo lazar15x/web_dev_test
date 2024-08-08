@@ -1,13 +1,28 @@
 import { Button, TextField } from '@mui/material';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import style from './style.module.scss';
+import { fetchSearch } from '../../store/slices/search/searchThunk';
+import { useAppDispatch } from '../../store/store';
 
 const Header: FC = () => {
+  const [search, setSearch] = useState('');
+  const dispatch = useAppDispatch();
+
+  const currentParams = {
+    query: search,
+    page: 1,
+  };
+
+  const handleFetchSearch = () => {
+    dispatch(fetchSearch(currentParams));
+  };
+
   return (
     <div className={style.header}>
       <div>
         <TextField
+          onChange={(e) => setSearch(e.target.value)}
           InputProps={{
             style: { height: '42px' },
           }}
@@ -28,6 +43,7 @@ const Header: FC = () => {
           variant="outlined"
         />
         <Button
+          onClick={() => handleFetchSearch()}
           sx={{ padding: '8px 22px', fontSize: '15px', height: '42px' }}
           variant="contained"
         >
