@@ -1,0 +1,21 @@
+.home {
+  height: 100%;
+
+  .content {
+    display: flex;
+    height: 100%;
+  }
+  
+  .welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &_title {
+      font-size: 46px;
+      color: #4f4f4f;
+      font-weight: 400;
+    }
+  }
+}

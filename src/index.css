@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: #000;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,9 +16,29 @@
   padding: 0;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+footer,
+header {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
 a {
   font-weight: 500;
   text-decoration: inherit;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {

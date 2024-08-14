@@ -1,4 +1,52 @@
 .description {
-  max-width: 480px;
+  width: 480px;
+  padding: 24px;
   background-color: #f2f2f2;
+
+  .choose_repo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    div {
+      color: #4f4f4f;
+    }
+  }
+
+  &_full {
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      .name_repo {
+        font-size: 32px;
+      }
+
+      .star_repo {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .description_repo {
+      margin-bottom: 10px;
+    }
+
+    .topics_repo {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+
+      .topics_tag {
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 100px;
+        padding: 3px 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

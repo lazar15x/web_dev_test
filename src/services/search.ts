@@ -1,5 +1,6 @@
 export default class SearchService {
-  static async fetchSearch(query: string, page: number) {
+  /**Fetch search repositories  */
+  static async fetchSearch(query: string) {
     const res = await fetch(
       `https://api.github.com/search/repositories?q=${query}`
     );

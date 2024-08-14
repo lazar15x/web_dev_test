@@ -4,4 +4,9 @@
   padding: 0 32px;
   height: 80px;
   background-color: #00838f;
+
+  .search {
+    display: flex;
+    flex-grow: 1;
+  }
 }

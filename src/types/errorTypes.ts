@@ -4,8 +4,8 @@ export interface ErrorType {
   readonly message: string;
   /** Error response object. */
   readonly response: {
-    /** Error status. */
-    readonly status?: string;
+  /** Error status. */
+  readonly status?: string;
   };
 }
 

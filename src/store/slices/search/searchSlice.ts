@@ -1,13 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchSearch } from './searchThunk';
+import { RejectedDataType } from '../../../types/errorTypes';
+import { Data } from '../../../components/table/types';
 
+/**Type of responsive from server */
+export interface IResponsiveItems extends Data {
+  /**Other fields */
+  [key: string]: string | number | object | [];
+}
+
+/**Type of initial state */
 export interface ISearchState {
   /**List of repositories */
-  repo: any[] | null;
+  repo: IResponsiveItems[];
   /**Data loading indicator */
   loading: boolean;
   /**Error message */
-  error: any;
+  error: RejectedDataType | null;
 }
 
 const initialState: ISearchState = {

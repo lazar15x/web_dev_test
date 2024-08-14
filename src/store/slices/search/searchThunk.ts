@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ErrorType, RejectedDataType } from '../../../types/errorTypes';
 import SearchService from '../../../services/search';
 
+/**Type of search query */
 interface IFetchSearch {
   /** Search string. */
   readonly query: string;
@@ -21,9 +22,9 @@ export const fetchSearch = createAsyncThunk<
   IResultsSearch,
   IFetchSearch,
   { readonly rejectValue: RejectedDataType }
->('repo/fetchSearch', async ({ query, page }, thunkAPI) => {
+>('repo/fetchSearch', async ({ query }, thunkAPI) => {
   try {
-    const response = await SearchService.fetchSearch(query, page);
+    const response = await SearchService.fetchSearch(query);
     console.log('response', response);
     return response;
   } catch (err: unknown) {

@@ -14,13 +14,14 @@ const Header: FC = () => {
     page: 1,
   };
 
+  /**Fetch repository */
   const handleFetchSearch = () => {
     dispatch(fetchSearch(currentParams));
   };
 
   return (
-    <div className={style.header}>
-      <div>
+    <header className={style.header}>
+      <div className={style.search}>
         <TextField
           onChange={(e) => setSearch(e.target.value)}
           InputProps={{
@@ -33,14 +34,15 @@ const Header: FC = () => {
             backgroundColor: '#F2F2F2',
             borderRadius: '4px',
             marginRight: '8px',
-            width: '912px',
+            maxWidth: '912px',
             '& input::placeholder': {
               fontStyle: 'italic',
             },
+            flexGrow: 1
           }}
           placeholder="Введите поисковый запрос"
-          id="outlined-basic"
           variant="outlined"
+          autoComplete="off"
         />
         <Button
           onClick={() => handleFetchSearch()}
@@ -50,7 +52,7 @@ const Header: FC = () => {
           Искать
         </Button>
       </div>
-    </div>
+    </header>
   );
 };
 
